@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Econorte - Higiene e praticidade para o seu ambiente</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div id="app" class="min-h-screen bg-white">
+        <!-- Header -->
+        <header id="header" class="bg-white shadow-lg sticky top-0 z-50">
+            <!-- Main Header -->
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-section">
+                        <button onclick="navigateTo('home')" class="logo-button">
+                            <div class="logo-icon">
+                                <img src="public/logo.png" alt="Econorte Logo">
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="desktop-nav">
+                        <div class="nav-links">
+                            <button onclick="navigateTo('home')" class="nav-link" data-page="home">Início</button>
+                            <button onclick="navigateTo('about')" class="nav-link" data-page="about">Sobre Nós</button>
+                            <button onclick="navigateTo('shop')" class="nav-link" data-page="shop">Loja</button>
+                            <button onclick="navigateTo('contact')" class="nav-link" data-page="contact">Contato</button>
+                        </div>
+                    </nav>
+
+                    <!-- WhatsApp Button Desktop -->
+                    <div class="desktop-whatsapp">
+                        <button onclick="openWhatsApp()" class="btn-secondary">
+                            <i data-lucide="message-circle"></i>
+                            <span>WhatsApp</span>
+                        </button>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="mobile-menu-button">
+                        <button onclick="toggleMobileMenu()" class="menu-toggle">
+                            <i data-lucide="menu" id="menu-icon"></i>
+                            <i data-lucide="x" id="close-icon" style="display: none;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-nav">
+                <div class="mobile-nav-content">
+                    <button onclick="navigateTo('home'); closeMobileMenu();" class="mobile-nav-link" data-page="home">Início</button>
+                    <button onclick="navigateTo('about'); closeMobileMenu();" class="mobile-nav-link" data-page="about">Sobre Nós</button>
+                    <button onclick="navigateTo('shop'); closeMobileMenu();" class="mobile-nav-link" data-page="shop">Loja</button>
+                    <button onclick="navigateTo('contact'); closeMobileMenu();" class="mobile-nav-link" data-page="contact">Contato</button>
+                    <button onclick="openWhatsApp(); closeMobileMenu();" class="btn-secondary mobile-whatsapp-btn">
+                        <i data-lucide="message-circle"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Home Page -->
+            <div id="page-home" class="page active">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-bg"></div>
+                    
+                    
+                    <div class="container hero-container">
+                        <div class="hero-grid">
+                            <div class="hero-content">
+                                <div class="hero-text">
+
+                                    <h2 class="hero-heading">
+                                        <span class="text-highlight">Higiene e praticidade</span><br>
+                                        para o seu ambiente
+                                    </h2>
+                                </div>
+                                
+                                <p class="hero-description">
+                                    Soluções completas em equipamentos para escritório com foco na higiene, 
+                                    organização e praticidade do seu ambiente de trabalho. Qualidade e 
+                                    confiança para empresas em Roraima.
+                                </p>
+                                
+                                <div class="hero-buttons">
+                                    <button onclick="openWhatsApp()" class="btn-hero-primary">
+                                        <i data-lucide="message-circle"></i>
+                                        <span>Fale Conosco no WhatsApp</span>
+                                    </button>
+                                    <button class="btn-hero-secondary">
+                                        Conheça Nossos Produtos
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="hero-image">
+                                <div class="hero-image-container">
+                                    <img src="public/loja.jpg" 
+                                         alt="Ambiente de escritório limpo e organizado" 
+                                         class="hero-img">
+                                    <div class="hero-badge">
+                                        <div class="hero-badge-content">
+                                            <i data-lucide="star"></i>
+                                            <span>Qualidade Garantida</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section class="about-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Quem Somos</h2>
+                            <p class="section-description">
+                                A Econorte é uma empresa especializada em fornecer soluções completas para 
+                                escritórios, priorizando sempre a <strong>higiene, organização e praticidade</strong> 
+                                dos ambientes de trabalho.
+                            </p>
+                        </div>
+                        
+                        <div class="about-grid">
+                            <div class="about-image">
+                                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg" 
+                                     alt="Equipe Econorte" 
+                                     class="about-img">
+                            </div>
+                            <div class="about-content">
+                                <div class="about-item">
+                                    <div class="about-icon mission-icon">
+                                        <i data-lucide="check-circle"></i>
+                                    </div>
+                                    <div class="about-text">
+                                        <h3 class="about-item-title">Nossa Missão</h3>
+                                        <p class="about-item-description">
+                                            Fornecer aos nossos clientes os melhores produtos de limpeza, garantindo eficácia, 
+                                            segurança e sustentabilidade. Compromisso em oferecer soluções para que os ambientes 
+                                            estejam sempre higienizados e saudáveis, entregando sempre a melhor experiência e 
+                                            satisfação garantida aos nossos clientes, aliado a redução do impacto ao meio ambiente.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="about-item">
+                                    <div class="about-icon vision-icon">
+                                        <i data-lucide="check-circle"></i>
+                                    </div>
+                                    <div class="about-text">
+                                        <h3 class="about-item-title">Nossa Visão</h3>
+                                        <p class="about-item-description">
+                                            Ser a maior empresa e a principal referência na região em produtos 
+                                            e soluções no segmento de limpeza.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="about-item">
+                                    <div class="about-icon values-icon">
+                                        <i data-lucide="check-circle"></i>
+                                    </div>
+                                    <div class="about-text">
+                                        <h3 class="about-item-title">Nossos Valores</h3>
+                                        <p class="about-item-description">
+                                            Confiança, Compromisso, Sustentabilidade, Qualidade, Atendimento de excelência, 
+                                            Transparência, Ética, Responsabilidade, Inovação e Conhecimento. Estes são os 
+                                            pilares que guiam todas as nossas ações e decisões.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Advantages Section -->
+                <section class="advantages-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Por que escolher a Econorte?</h2>
+                            <p class="section-description">
+                                Descubra os diferenciais que fazem da Econorte a melhor escolha 
+                                para equipar seu escritório com qualidade, higiene e praticidade.
+                            </p>
+                        </div>
+                        
+                        <div class="advantages-grid">
+                            <div class="advantage-card">
+                                <div class="advantage-icon">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <h3 class="advantage-title">Produtos de Qualidade</h3>
+                                <p class="advantage-description">
+                                    Trabalhamos apenas com fornecedores certificados e produtos que garantem higiene e durabilidade.
+                                </p>
+                            </div>
+                            
+                            <div class="advantage-card">
+                                <div class="advantage-icon">
+                                    <i data-lucide="zap"></i>
+                                </div>
+                                <h3 class="advantage-title">Agilidade no Atendimento</h3>
+                                <p class="advantage-description">
+                                    Processos otimizados para entregar rapidez sem comprometer a qualidade do serviço.
+                                </p>
+                            </div>
+                            
+                            <div class="advantage-card">
+                                <div class="advantage-icon">
+                                    <i data-lucide="users"></i>
+                                </div>
+                                <h3 class="advantage-title">Suporte Especializado</h3>
+                                <p class="advantage-description">
+                                    Nossa equipe oferece consultoria personalizada para encontrar a melhor solução para sua empresa.
+                                </p>
+                            </div>
+                            
+                            <div class="advantage-card">
+                                <div class="advantage-icon">
+                                    <i data-lucide="heart"></i>
+                                </div>
+                                <h3 class="advantage-title">Confiança Comprovada</h3>
+                                <p class="advantage-description">
+                                    Anos de experiência no mercado, conquistando a confiança de empresas em toda Roraima.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Categories Section -->
+                <section class="categories-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Categorias de Produtos</h2>
+                            <p class="section-description">
+                                Explore nossa linha completa de produtos de limpeza especializados para 
+                                empresas, residências e veículos. Soluções eficazes para cada necessidade 
+                                de higienização e limpeza.
+                            </p>
+                        </div>
+                        
+                        <div class="categories-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+                            <div class="category-card">
+                                <div class="category-image">
+                                    <img src="categorias/empresa.jpg" 
+                                         alt="Limpeza Empresarial" 
+                                         class="category-img">
+                                    <div class="category-overlay"></div>
+                                </div>
+                                <div class="category-content">
+                                    <h3 class="category-title">Limpeza Empresarial</h3>
+                                    <p class="category-description">
+                                        Produtos especializados para higienização e limpeza de ambientes corporativos, 
+                                        escritórios, indústrias e estabelecimentos comerciais
+                                    </p>
+                                    <div class="category-link">
+                                        <span>Em breve disponível</span>
+                                        <i data-lucide="arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="category-card">
+                                <div class="category-image">
+                                    <img src="categorias/casa.jpg" 
+                                         alt="Limpeza Residencial" 
+                                         class="category-img">
+                                    <div class="category-overlay"></div>
+                                </div>
+                                <div class="category-content">
+                                    <h3 class="category-title">Limpeza Residencial</h3>
+                                    <p class="category-description">
+                                        Linha completa de produtos de limpeza para uso doméstico, 
+                                        garantindo higiene e proteção para toda a família
+                                    </p>
+                                    <div class="category-link">
+                                        <span>Em breve disponível</span>
+                                        <i data-lucide="arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="category-card">
+                                <div class="category-image">
+                                    <img src="categorias/carro.jpg" 
+                                         alt="Limpeza Automotiva" 
+                                         class="category-img">
+                                    <div class="category-overlay"></div>
+                                </div>
+                                <div class="category-content">
+                                    <h3 class="category-title">Limpeza Automotiva</h3>
+                                    <p class="category-description">
+                                        Produtos especializados para limpeza interna e externa de veículos, 
+                                        mantendo seu carro sempre limpo e protegido
+                                    </p>
+                                    <div class="category-link">
+                                        <span>Em breve disponível</span>
+                                        <i data-lucide="arrow-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <div class="cta-bg"></div>
+                    <div class="cta-decoration">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    
+                    <div class="container cta-container">
+                        <h2 class="cta-title">Pronto para transformar seu ambiente?</h2>
+                        <p class="cta-description">
+                            Entre em contato conosco e descubra como podemos tornar seu escritório 
+                            mais higiênico, organizado e produtivo. Atendimento personalizado e 
+                            consultoria especializada.
+                        </p>
+                        <div class="cta-buttons">
+                            <button onclick="openWhatsApp()" class="btn-cta-primary">
+                                <i data-lucide="message-circle"></i>
+                                <span>Fale Conosco</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Location Section -->
+                <section class="location-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Nossa Localização</h2>
+                            <p class="section-description">
+                                Visite nossa loja física no coração de Boa Vista
+                            </p>
+                        </div>
+                        
+                        <div class="location-grid">
+                            <div class="location-info">
+                                <div class="location-item">
+                                    <div class="location-icon address-icon">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div class="location-content">
+                                        <h3 class="location-title">Endereço</h3>
+                                        <p class="location-text">
+                                            Avenida Centenário, 550<br>
+                                            Cinturão Verde<br>
+                                            Boa Vista - RR, 69312-377
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="location-item">
+                                    <div class="location-icon phone-icon">
+                                        <i data-lucide="phone"></i>
+                                    </div>
+                                    <div class="location-content">
+                                        <h3 class="location-title">Telefone</h3>
+                                        <p class="location-phone">(95) 9174-7792</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="location-hours">
+                                    <h4 class="hours-title">Horário de Funcionamento</h4>
+                                    <div class="hours-content">
+                                        <p><strong>Segunda a Sexta:</strong> 8:00 às 18:00</p>
+                                        <p><strong>Sábado:</strong> 9:00 às 13:00</p>
+                                        <p><strong>Domingo:</strong> Fechado</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="location-map">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.635451!2d-60.6754!3d2.8194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d930cccccccccc%3A0x9999999999999999!2sAv.%20Centen%C3%A1rio%2C%20550%20-%20Cintur%C3%A3o%20Verde%2C%20Boa%20Vista%20-%20RR%2C%2069312-377%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1640995200000!5m2!1spt-BR!2sbr"
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0; border-radius: 1rem;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Localização Econorte - Av. Centenário, 550, Boa Vista - RR">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- About Page -->
+            <div id="page-about" class="page">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-bg"></div>
+                    <div class="hero-decorations">
+                        <i data-lucide="sparkles" class="hero-decoration-1"></i>
+                    </div>
+                    
+                    <div class="container hero-container">
+                        <div class="hero-content" style="text-align: center;">
+                            <div class="hero-brand" style="justify-content: center;">
+                                <div class="hero-logo">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+                                <h1 class="hero-title">Sobre a Econorte</h1>
+                            </div>
+                            <p class="hero-description" style="max-width: 64rem; margin: 0 auto;">
+                                Conheça nossa história, valores e compromisso com a excelência no 
+                                fornecimento de soluções higiênicas e práticas para escritórios em Roraima.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Company Story -->
+                <section class="about-section">
+                    <div class="container">
+                        <div class="about-grid">
+                            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                                <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Nossa História</h2>
+                                <div style="color: var(--gray-600); line-height: 1.6; font-size: 1.125rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <p>
+                                        A <strong style="color: var(--econorte-blue-600);">Econorte Comércio e Serviços Ltda.</strong> nasceu 
+                                        da visão de transformar ambientes de trabalho em espaços mais higiênicos, 
+                                        organizados e produtivos. Desde nossa fundação, temos nos dedicado a 
+                                        oferecer soluções que combinam <strong>qualidade, praticidade e higiene</strong>.
+                                    </p>
+                                    <p>
+                                        Localizada estrategicamente na Avenida Centenário, nossa empresa tem se 
+                                        consolidado como referência no segmento, oferecendo desde produtos básicos 
+                                        de escritório até soluções completas de higienização e organização de ambientes corporativos.
+                                    </p>
+                                    <p>
+                                        Nossa trajetória é marcada pelo crescimento sustentável e pela confiança 
+                                        conquistada junto aos nossos clientes, que reconhecem na Econorte um 
+                                        parceiro confiável para criar ambientes de trabalho mais saudáveis e eficientes.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="about-image">
+                                <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" 
+                                     alt="Escritório limpo e organizado" 
+                                     class="about-img">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mission, Vision, Values -->
+                <section style="padding: 5rem 0; background: linear-gradient(135deg, var(--gray-50), var(--econorte-blue-50));">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Missão, Visão e Valores</h2>
+                            <p class="section-description">Os pilares que guiam nossa atuação no mercado</p>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                                <div style="background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                    <div style="color: var(--econorte-blue-600); margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                                        <div style="width: 4rem; height: 4rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                            <i data-lucide="target" style="width: 2rem; height: 2rem;"></i>
+                                        </div>
+                                    </div>
+                                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem;">Missão</h3>
+                                    <p style="color: var(--gray-600); line-height: 1.6;">
+                                        Fornecer aos nossos clientes os melhores produtos de limpeza, garantindo eficácia, 
+                                        segurança e sustentabilidade. Compromisso em oferecer soluções para que os ambientes 
+                                        estejam sempre higienizados e saudáveis, entregando sempre a melhor experiência e 
+                                        satisfação garantida aos nossos clientes, aliado a redução do impacto ao meio ambiente.
+                                    </p>
+                                </div>
+                                
+                                <div style="background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                    <div style="color: var(--econorte-green-600); margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                                        <div style="width: 4rem; height: 4rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                            <i data-lucide="building" style="width: 2rem; height: 2rem;"></i>
+                                        </div>
+                                    </div>
+                                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem;">Visão</h3>
+                                    <p style="color: var(--gray-600); line-height: 1.6;">
+                                        Ser a maior empresa e a principal referência na região em produtos 
+                                        e soluções no segmento de limpeza.
+                                    </p>
+                                </div>
+                                
+                                <div style="background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                    <div style="color: var(--econorte-blue-600); margin-bottom: 1.5rem; display: flex; justify-content: center;">
+                                        <div style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--econorte-blue-100), var(--econorte-green-100)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                            <i data-lucide="heart" style="width: 2rem; height: 2rem;"></i>
+                                        </div>
+                                    </div>
+                                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem;">Valores</h3>
+                                    <p style="color: var(--gray-600); line-height: 1.6;">
+                                        Confiança, Compromisso, Sustentabilidade, Qualidade, Atendimento de excelência, 
+                                        Transparência, Ética, Responsabilidade, Inovação e Conhecimento. Estes são os 
+                                        pilares fundamentais que orientam todas as nossas ações e decisões empresariais.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Values Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-blue-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="shield-check" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">1. Confiança</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Construímos relacionamentos sólidos baseados na confiança mútua.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-green-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="handshake" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">2. Compromisso</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Dedicação total em cumprir nossos compromissos e promessas.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-blue-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="leaf" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">3. Sustentabilidade</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Compromisso com práticas que preservam o meio ambiente.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-green-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="award" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">4. Qualidade</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Excelência em todos os produtos e serviços oferecidos.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-blue-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="star" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">5. Atendimento de Excelência</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Superamos expectativas em cada atendimento realizado.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-green-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="eye" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">6. Transparência</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Clareza e honestidade em todas as nossas relações.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-blue-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="scale" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">7. Ética</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Conduta íntegra e moral em todas as nossas ações.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-green-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="shield" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">8. Responsabilidade</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Assumimos responsabilidade por nossos atos e resultados.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-blue-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="lightbulb" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">9. Inovação</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Buscamos constantemente soluções criativas e inovadoras.
+                                </p>
+                            </div>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;" class="card-hover">
+                                <div style="color: var(--econorte-green-600); margin-bottom: 1rem; display: flex; justify-content: center;">
+                                    <div style="width: 2.5rem; height: 2.5rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="book-open" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    </div>
+                                </div>
+                                <h4 style="font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">10. Conhecimento</h4>
+                                <p style="color: var(--gray-600); font-size: 0.8rem; line-height: 1.4;">
+                                    Investimos no conhecimento e aprendizado contínuo.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Company Info -->
+                <section style="padding: 5rem 0; background: white;">
+                    <div class="container">
+                        <div style="background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 2.5rem;">
+                            <h2 style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem; text-align: center;">
+                                Informações da Empresa
+                            </h2>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-blue-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-blue-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">Razão Social:</p>
+                                            <p style="color: var(--gray-600);">Econorte Comércio e Serviços Ltda.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-green-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-green-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">Nome Fantasia:</p>
+                                            <p style="color: var(--gray-600);">Econorte</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-blue-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-blue-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">CNPJ:</p>
+                                            <p style="color: var(--gray-600); font-family: monospace;">10.763.887/0001-23</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-green-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-green-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">CNAE:</p>
+                                            <p style="color: var(--gray-600); font-family: monospace;">G-4789-0/07</p>
+                                            <p style="font-size: 0.875rem; color: var(--gray-500);">Comércio varejista de equipamentos para escritório</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-blue-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-blue-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">Endereço:</p>
+                                            <p style="color: var(--gray-600);">
+                                                Avenida Centenário, 550<br>
+                                                Cinturão Verde, Boa Vista - RR<br>
+                                                CEP: 69312-377
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                                        <div style="width: 2rem; height: 2rem; background: var(--econorte-green-100); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="check-circle" style="width: 1.25rem; height: 1.25rem; color: var(--econorte-green-600);"></i>
+                                        </div>
+                                        <div>
+                                            <p style="font-weight: 700; color: var(--gray-900); font-size: 1.125rem;">Slogan:</p>
+                                            <p style="color: var(--gray-600); font-style: italic;">"Higiene e praticidade para o seu ambiente"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Shop Page -->
+            <div id="page-shop" class="page">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-bg"></div>
+                    <div class="hero-decorations">
+                        <i data-lucide="sparkles" class="hero-decoration-1"></i>
+                    </div>
+                    
+                    <div class="container hero-container">
+                        <div class="hero-content" style="text-align: center;">
+                            <div class="hero-brand" style="justify-content: center;">
+                                <div class="hero-logo">
+                                    <i data-lucide="shopping-bag"></i>
+                                </div>
+                                <h1 class="hero-title">Nossa Loja</h1>
+                            </div>
+                            <p class="hero-description" style="max-width: 64rem; margin: 0 auto;">
+                                Explore nossa linha completa de <strong>produtos de limpeza especializados</strong> para empresas, 
+                                residências e veículos. Em breve, nosso catálogo completo estará disponível com preços e especificações detalhadas.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search and Filters -->
+                <section style="padding: 2rem 0; background: linear-gradient(to right, var(--gray-50), var(--econorte-blue-50)); position: sticky; top: 80px; z-index: 40;">
+                    <div class="container">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; align-items: center; justify-content: space-between;">
+                            
+                            <!-- Search Bar -->
+                            <div style="position: relative; flex-grow: 1; max-width: 32rem; width: 100%;">
+                                <i data-lucide="search" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                <input
+                                    type="text"
+                                    placeholder="Buscar categorias, produtos ou soluções..."
+                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; font-size: 1.125rem; transition: all 0.3s ease;"
+                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                />
+                            </div>
+
+                            <!-- View Controls -->
+                            <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                                <div style="display: flex; background: white; border-radius: 0.75rem; border: 1px solid var(--gray-300); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                                    <button style="padding: 0.75rem; background: var(--econorte-blue-600); color: white; border: none; cursor: pointer;">
+                                        <i data-lucide="grid-3x3" style="width: 1.25rem; height: 1.25rem;"></i>
+                                    </button>
+                                    <button style="padding: 0.75rem; background: white; color: var(--gray-600); border: none; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='var(--gray-100)'" onmouseout="this.style.backgroundColor='white'">
+                                        <i data-lucide="list" style="width: 1.25rem; height: 1.25rem;"></i>
+                                    </button>
+                                </div>
+                                
+                                <button style="display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: white; border: 1px solid var(--gray-300); border-radius: 0.75rem; cursor: pointer; transition: background-color 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" onmouseover="this.style.backgroundColor='var(--gray-50)'" onmouseout="this.style.backgroundColor='white'">
+                                    <i data-lucide="filter" style="width: 1.25rem; height: 1.25rem; color: var(--gray-600);"></i>
+                                    <span style="color: var(--gray-700); font-weight: 500;">Filtros</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Categories -->
+                <section style="padding: 5rem 0;">
+                    <div class="container">
+                        
+                        <!-- Coming Soon Notice -->
+                        <div style="background: linear-gradient(to right, var(--econorte-blue-50), var(--econorte-green-50)); border: 1px solid var(--econorte-blue-200); border-radius: 1rem; padding: 2rem; margin-bottom: 4rem;">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 1.5rem;">
+                                <div style="display: flex; align-items: center; gap: 1rem; text-align: center;">
+                                    <div style="width: 4rem; height: 4rem; background: linear-gradient(135deg, var(--econorte-blue-600), var(--econorte-green-600)); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center;">
+                                        <i data-lucide="package" style="width: 2rem; height: 2rem; color: white;"></i>
+                                    </div>
+                                    <div>
+                                        <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.5rem;">
+                                            Catálogo Online em Desenvolvimento
+                                        </h3>
+                                                                    <p style="color: var(--gray-700); line-height: 1.6;">
+                                Estamos preparando nosso catálogo completo com <strong>produtos de limpeza especializados</strong> 
+                                para empresas, residências e veículos. Enquanto isso, entre em contato para consultoria personalizada.
+                            </p>
+                                    </div>
+                                </div>
+                                <button onclick="openWhatsApp()" class="btn-secondary" style="display: flex; align-items: center; gap: 0.75rem; white-space: nowrap; font-size: 1.125rem;">
+                                    <i data-lucide="message-circle" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    <span>Consultar Agora</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Categories Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                                                         <!-- Limpeza Empresarial -->
+                             <div class="category-card">
+                                 <div class="category-image">
+                                     <img src="categorias/empresa.jpg" 
+                                          alt="Limpeza Empresarial" 
+                                          class="category-img">
+                                     <div class="category-overlay"></div>
+                                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                                        <span style="background: var(--econorte-blue-600); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">
+                                            Empresarial
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-content">
+                                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+                                        <h3 class="category-title">Limpeza Empresarial</h3>
+                                        <div style="display: flex; align-items: center; gap: 0.25rem; color: #fbbf24;">
+                                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                                            <span style="font-size: 0.875rem; color: var(--gray-600); font-weight: 500;">Em breve</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="category-description">
+                                        Produtos especializados para higienização e limpeza de ambientes corporativos, escritórios, indústrias e estabelecimentos comerciais.
+                                    </p>
+                                    
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Subcategorias:</h4>
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Desinfetantes</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Sanitizantes</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Limpadores Multiuso</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <i data-lucide="package" style="width: 1rem; height: 1rem; margin-right: 0.5rem;"></i>
+                                            <span>Produtos: Em desenvolvimento</span>
+                                        </div>
+                                        <button class="category-link">
+                                            <span>Explorar</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                         <!-- Limpeza Residencial -->
+                             <div class="category-card">
+                                 <div class="category-image">
+                                     <img src="categorias/casa.jpg" 
+                                          alt="Limpeza Residencial" 
+                                          class="category-img">
+                                     <div class="category-overlay"></div>
+                                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                                        <span style="background: var(--econorte-green-600); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">
+                                            Residencial
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-content">
+                                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+                                        <h3 class="category-title">Limpeza Residencial</h3>
+                                        <div style="display: flex; align-items: center; gap: 0.25rem; color: #fbbf24;">
+                                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                                            <span style="font-size: 0.875rem; color: var(--gray-600); font-weight: 500;">Em breve</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="category-description">
+                                        Linha completa de produtos de limpeza para uso doméstico, garantindo higiene e proteção para toda a família.
+                                    </p>
+                                    
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Subcategorias:</h4>
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Detergentes</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Desengordurantes</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Amaciantes</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <i data-lucide="package" style="width: 1rem; height: 1rem; margin-right: 0.5rem;"></i>
+                                            <span>Produtos: Em desenvolvimento</span>
+                                        </div>
+                                        <button class="category-link">
+                                            <span>Explorar</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                                                         <!-- Limpeza Automotiva -->
+                             <div class="category-card">
+                                 <div class="category-image">
+                                     <img src="categorias/carro.jpg" 
+                                          alt="Limpeza Automotiva" 
+                                          class="category-img">
+                                     <div class="category-overlay"></div>
+                                    <div style="position: absolute; top: 1rem; right: 1rem;">
+                                        <span style="background: var(--econorte-blue-600); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">
+                                            Automotiva
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="category-content">
+                                    <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+                                        <h3 class="category-title">Limpeza Automotiva</h3>
+                                        <div style="display: flex; align-items: center; gap: 0.25rem; color: #fbbf24;">
+                                            <i data-lucide="star" style="width: 1.25rem; height: 1.25rem; fill: currentColor;"></i>
+                                            <span style="font-size: 0.875rem; color: var(--gray-600); font-weight: 500;">Em breve</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="category-description">
+                                        Produtos especializados para limpeza interna e externa de veículos, mantendo seu carro sempre limpo e protegido.
+                                    </p>
+                                    
+                                    <div style="margin-bottom: 1.5rem;">
+                                        <h4 style="font-size: 0.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.75rem;">Subcategorias:</h4>
+                                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Shampoos Automotivos</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Ceras e Enceradeiras</span>
+                                            <span style="padding: 0.25rem 0.75rem; background: linear-gradient(to right, var(--econorte-blue-100), var(--econorte-green-100)); color: var(--gray-700); font-size: 0.875rem; border-radius: 9999px; font-weight: 500;">Limpa Vidros</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                                        <div style="font-size: 0.875rem; color: var(--gray-500); display: flex; align-items: center;">
+                                            <i data-lucide="package" style="width: 1rem; height: 1rem; margin-right: 0.5rem;"></i>
+                                            <span>Produtos: Em desenvolvimento</span>
+                                        </div>
+                                        <button class="category-link">
+                                            <span>Explorar</span>
+                                            <i data-lucide="arrow-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section style="padding: 5rem 0; background: linear-gradient(135deg, var(--gray-50), var(--econorte-blue-50));">
+                    <div class="container" style="text-align: center;">
+                        <div style="max-width: 64rem; margin: 0 auto;">
+                            <h2 style="font-size: 2.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1.5rem;">
+                                Precisa de Ajuda para Escolher?
+                            </h2>
+                            <p style="font-size: 1.25rem; color: var(--gray-600); margin-bottom: 2.5rem; line-height: 1.6;">
+                                Nossa equipe especializada está pronta para ajudar você a encontrar 
+                                os <strong>melhores produtos de limpeza</strong> para sua empresa, casa ou veículo. 
+                                Consultoria gratuita e personalizada.
+                            </p>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center; align-items: center;">
+                                <button onclick="openWhatsApp()" class="btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 1.125rem;">
+                                    <i data-lucide="message-circle" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    <span>Consultoria via WhatsApp</span>
+                                </button>
+                                
+                                <button class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 1.125rem;">
+                                    <i data-lucide="package" style="width: 1.5rem; height: 1.5rem;"></i>
+                                    <span>Solicitar Orçamento</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter Signup -->
+                <section class="cta-section">
+                    <div class="cta-bg"></div>
+                    <div style="position: absolute; bottom: 0; left: 0; opacity: 0.1;">
+                        <i data-lucide="sparkles" style="width: 12rem; height: 12rem; color: white;"></i>
+                    </div>
+                    
+                    <div class="container cta-container">
+                        <h2 style="font-size: 1.875rem; font-weight: 700; margin-bottom: 1.5rem;">
+                            Seja o Primeiro a Saber
+                        </h2>
+                                                    <p style="font-size: 1.25rem; color: #bfdbfe; margin-bottom: 2.5rem; max-width: 48rem; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                                Cadastre-se em nossa newsletter e receba em primeira mão informações 
+                                sobre novos produtos, ofertas especiais e lançamento do catálogo online 
+                                de produtos de limpeza especializados.
+                            </p>
+                        
+                        <div style="max-width: 32rem; margin: 0 auto; display: flex; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+                            <input
+                                type="email"
+                                placeholder="Seu melhor e-mail"
+                                style="flex-grow: 1; padding: 1rem 1.5rem; color: var(--gray-900); outline: none; font-size: 1.125rem; border: none;"
+                            />
+                            <button onclick="handleNewsletterSignup(this.previousElementSibling.value); this.previousElementSibling.value='';" style="background: var(--econorte-green-600); padding: 1rem 2rem; font-weight: 700; transition: background-color 0.3s; font-size: 1.125rem; border: none; color: white; cursor: pointer;" onmouseover="this.style.backgroundColor='var(--econorte-green-700)'" onmouseout="this.style.backgroundColor='var(--econorte-green-600)'">
+                                Cadastrar
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Contact Page -->
+            <div id="page-contact" class="page">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-bg"></div>
+                    <div class="hero-decorations">
+                        <i data-lucide="sparkles" class="hero-decoration-1"></i>
+                    </div>
+                    
+                    <div class="container hero-container">
+                        <div class="hero-content" style="text-align: center;">
+                            <div class="hero-brand" style="justify-content: center;">
+                                <div class="hero-logo">
+                                    <i data-lucide="message-circle"></i>
+                                </div>
+                                <h1 class="hero-title">Entre em Contato</h1>
+                            </div>
+                            <p class="hero-description" style="max-width: 64rem; margin: 0 auto;">
+                                Estamos prontos para atender você e transformar seu ambiente de trabalho. 
+                                Entre em contato conosco através dos canais abaixo ou visite nossa loja física.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Form and Info -->
+                <section style="padding: 5rem 0;">
+                    <div class="container">
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 4rem;">
+                            
+                            <!-- Contact Form -->
+                            <div style="background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 2.5rem;">
+                                <h2 style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
+                                    Envie sua Mensagem
+                                </h2>
+                                
+                                <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                        <div>
+                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                                Nome Completo *
+                                            </label>
+                                            <div style="position: relative;">
+                                                <i data-lucide="user" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    required
+                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
+                                                    placeholder="Seu nome completo"
+                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                                E-mail *
+                                            </label>
+                                            <div style="position: relative;">
+                                                <i data-lucide="mail" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    required
+                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
+                                                    placeholder="seu@email.com"
+                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                                        <div>
+                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                                Telefone *
+                                            </label>
+                                            <div style="position: relative;">
+                                                <i data-lucide="phone" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                                <input
+                                                    type="tel"
+                                                    name="phone"
+                                                    required
+                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
+                                                    placeholder="(95) 9174-7792"
+                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                                />
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                                Empresa
+                                            </label>
+                                            <div style="position: relative;">
+                                                <i data-lucide="building" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                                <input
+                                                    type="text"
+                                                    name="company"
+                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
+                                                    placeholder="Nome da sua empresa"
+                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                            Assunto *
+                                        </label>
+                                        <select
+                                            name="subject"
+                                            required
+                                            style="width: 100%; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
+                                            onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                            onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                        >
+                                            <option value="">Selecione um assunto</option>
+                                            <option value="orcamento">Solicitação de Orçamento</option>
+                                            <option value="produto">Informações sobre Produtos</option>
+                                            <option value="higiene">Soluções de Higiene</option>
+                                            <option value="organizacao">Organização de Ambientes</option>
+                                            <option value="suporte">Suporte Técnico</option>
+                                            <option value="outro">Outro</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
+                                            Mensagem *
+                                        </label>
+                                        <div style="position: relative;">
+                                            <i data-lucide="message-square" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
+                                            <textarea
+                                                name="message"
+                                                required
+                                                rows="6"
+                                                style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; resize: none; transition: all 0.3s ease;"
+                                                placeholder="Descreva sua necessidade ou dúvida sobre higiene e organização do seu ambiente..."
+                                                onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
+                                                onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <button
+                                        type="submit"
+                                        class="btn-primary"
+                                        style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 1.125rem; padding: 1rem;"
+                                    >
+                                        <i data-lucide="send" style="width: 1.5rem; height: 1.5rem;"></i>
+                                        <span>Enviar Mensagem</span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                            <div style="background: linear-gradient(135deg, var(--econorte-blue-50), var(--econorte-green-50)); border-radius: 1rem; padding: 2.5rem;">
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
+                                    Informações de Contato
+                                </h3>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                    <div class="location-item">
+                                        <div class="location-icon address-icon">
+                                            <i data-lucide="map-pin"></i>
+                                        </div>
+                                        <div class="location-content">
+                                            <h4 class="location-title">Endereço</h4>
+                                            <p class="location-text">
+                                                Avenida Centenário, 550<br>
+                                                Cinturão Verde<br>
+                                                Boa Vista - RR, 69312-377
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="location-item">
+                                        <div class="location-icon phone-icon">
+                                            <i data-lucide="phone"></i>
+                                        </div>
+                                        <div class="location-content">
+                                            <h4 class="location-title">Telefone</h4>
+                                            <p class="location-phone">(95) 9174-7792</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="location-item">
+                                        <div style="width: 3rem; height: 3rem; background: var(--econorte-blue-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="mail" style="width: 1.5rem; height: 1.5rem; color: var(--econorte-blue-600);"></i>
+                                        </div>
+                                        <div class="location-content">
+                                            <h4 class="location-title">E-mail</h4>
+                                            <p style="color: var(--gray-600);">contato@econorte.com.br</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="location-item">
+                                        <div style="width: 3rem; height: 3rem; background: var(--econorte-green-100); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i data-lucide="clock" style="width: 1.5rem; height: 1.5rem; color: var(--econorte-green-600);"></i>
+                                        </div>
+                                        <div class="location-content">
+                                            <h4 class="location-title">Horário de Funcionamento</h4>
+                                            <div style="color: var(--gray-600);">
+                                                <p><strong>Segunda a Sexta:</strong> 8:00 às 18:00</p>
+                                                <p><strong>Sábado:</strong> 9:00 às 13:00</p>
+                                                <p><strong>Domingo:</strong> Fechado</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp CTA -->
+                            <div style="background: linear-gradient(135deg, var(--econorte-green-50), var(--econorte-green-100)); border-radius: 1rem; padding: 2.5rem; border: 1px solid var(--econorte-green-200);">
+                                <div style="text-align: center;">
+                                    <div style="width: 4rem; height: 4rem; background: var(--econorte-green-600); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                                        <i data-lucide="message-circle" style="width: 2rem; height: 2rem; color: white;"></i>
+                                    </div>
+                                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 1rem;">
+                                        Atendimento via WhatsApp
+                                    </h3>
+                                    <p style="color: var(--gray-600); margin-bottom: 2rem; line-height: 1.6;">
+                                        Para um atendimento mais rápido sobre nossas soluções de higiene 
+                                        e praticidade, fale conosco pelo WhatsApp. Estamos online durante 
+                                        o horário comercial.
+                                    </p>
+                                    <button
+                                        onclick="openWhatsApp()"
+                                        class="btn-secondary"
+                                        style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin: 0 auto; font-size: 1.125rem;"
+                                    >
+                                        <i data-lucide="message-circle" style="width: 1.5rem; height: 1.5rem;"></i>
+                                        <span>Conversar no WhatsApp</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Map -->
+                        <div style="margin-top: 4rem;">
+                            <div class="location-map">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.635451!2d-60.6754!3d2.8194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d930cccccccccc%3A0x9999999999999999!2sAv.%20Centen%C3%A1rio%2C%20550%20-%20Cintur%C3%A3o%20Verde%2C%20Boa%20Vista%20-%20RR%2C%2069312-377%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1640995200000!5m2!1spt-BR!2sbr"
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0; border-radius: 1rem;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Localização Econorte - Av. Centenário, 550, Boa Vista - RR">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="footer-main">
+                <div class="container">
+                    <div class="footer-grid">
+                        <!-- Company Info -->
+                        <div class="footer-section">
+                            <div class="footer-brand">
+                                <div class="footer-logo">
+                                    <i data-lucide="sparkles"></i>
+                                </div>
+                                <div class="footer-brand-text">
+                                    <h3 class="footer-title">ECONORTE</h3>
+                                    <p class="footer-subtitle">Higiene & Praticidade</p>
+                                </div>
+                            </div>
+                            <p class="footer-description">
+                                Especializada em equipamentos para escritório, oferecendo soluções completas 
+                                com foco em higiene e praticidade para empresas em Roraima.
+                            </p>
+                            <div class="footer-legal">
+                                <p><strong>Razão Social:</strong></p>
+                                <p>Econorte Comércio e Serviços Ltda.</p>
+                                <p><strong>CNPJ:</strong> 10.763.887/0001-23</p>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-section">
+                            <h4 class="footer-section-title">Contato</h4>
+                            <div class="footer-contact">
+                                <div class="contact-item">
+                                    <i data-lucide="map-pin"></i>
+                                    <div>
+                                        <p>Avenida Centenário, 550</p>
+                                        <p>Cinturão Verde</p>
+                                        <p>Boa Vista - RR, 69312-377</p>
+                                    </div>
+                                </div>
+                                <div class="contact-item">
+                                    <i data-lucide="phone"></i>
+                                    <span>(95) 9174-7792</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i data-lucide="mail"></i>
+                                    <span>contato@econorte.com.br</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Hours -->
+                        <div class="footer-section">
+                            <h4 class="footer-section-title">Horário de Funcionamento</h4>
+                            <div class="footer-hours">
+                                <div class="hours-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Segunda a Sexta</span>
+                                </div>
+                                <p class="hours-time">8:00 às 18:00</p>
+                                <div class="hours-item">
+                                    <i data-lucide="clock"></i>
+                                    <span>Sábado</span>
+                                </div>
+                                <p class="hours-time">9:00 às 13:00</p>
+                                <p class="hours-closed">Domingo: Fechado</p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Links & Social -->
+                        <div class="footer-section">
+                            <h4 class="footer-section-title">Links Rápidos</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" onclick="navigateTo('home')">Início</a></li>
+                                <li><a href="#" onclick="navigateTo('about')">Sobre Nós</a></li>
+                                <li><a href="#" onclick="navigateTo('shop')">Loja</a></li>
+                                <li><a href="#" onclick="navigateTo('contact')">Contato</a></li>
+                            </ul>
+                            
+                            <div class="footer-social">
+                                <h5 class="social-title">Redes Sociais</h5>
+                                <div class="social-icons">
+                                    <div class="social-icon">
+                                        <i data-lucide="facebook"></i>
+                                    </div>
+                                    <div class="social-icon">
+                                        <i data-lucide="instagram"></i>
+                                    </div>
+                                    <div class="social-icon">
+                                        <i data-lucide="linkedin"></i>
+                                    </div>
+                                </div>
+                                <p class="social-note">Em breve disponível</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="footer-bottom-content">
+                        <p>&copy; 2025 Econorte Comércio e Serviços Ltda. Todos os direitos reservados.</p>
+                        <p class="cnae-info">CNAE: G-4789-0/07 - Comércio varejista de equipamentos para escritório</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 
