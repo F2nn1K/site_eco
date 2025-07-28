@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Econorte - Higiene e praticidade para o seu ambiente</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,6 +32,7 @@
                             <button onclick="navigateTo('home')" class="nav-link" data-page="home">Início</button>
                             <button onclick="navigateTo('about')" class="nav-link" data-page="about">Sobre Nós</button>
                             <button onclick="navigateTo('shop')" class="nav-link" data-page="shop">Loja</button>
+                            <button onclick="navigateTo('careers')" class="nav-link" data-page="careers">Trabalhe Conosco</button>
                             <button onclick="navigateTo('contact')" class="nav-link" data-page="contact">Contato</button>
                         </div>
                     </nav>
@@ -60,6 +61,7 @@
                     <button onclick="navigateTo('home'); closeMobileMenu();" class="mobile-nav-link" data-page="home">Início</button>
                     <button onclick="navigateTo('about'); closeMobileMenu();" class="mobile-nav-link" data-page="about">Sobre Nós</button>
                     <button onclick="navigateTo('shop'); closeMobileMenu();" class="mobile-nav-link" data-page="shop">Loja</button>
+                    <button onclick="navigateTo('careers'); closeMobileMenu();" class="mobile-nav-link" data-page="careers">Trabalhe Conosco</button>
                     <button onclick="navigateTo('contact'); closeMobileMenu();" class="mobile-nav-link" data-page="contact">Contato</button>
                     <button onclick="openWhatsApp(); closeMobileMenu();" class="btn-secondary mobile-whatsapp-btn">
                         <i data-lucide="message-circle"></i>
@@ -100,7 +102,7 @@
                                         <i data-lucide="message-circle"></i>
                                         <span>Fale Conosco no WhatsApp</span>
                                     </button>
-                                    <button class="btn-hero-secondary">
+                                    <button onclick="navigateTo('shop')" class="btn-hero-secondary">
                                         Conheça Nossos Produtos
                                     </button>
                                 </div>
@@ -1027,6 +1029,297 @@
                 </section>
             </div>
 
+            <!-- Careers Page -->
+            <div id="page-careers" class="page">
+                <!-- Hero Section -->
+                <section class="hero-section">
+                    <div class="hero-bg"></div>
+                    <div class="hero-decorations">
+                        <i data-lucide="users" class="hero-decoration-1"></i>
+                    </div>
+                    
+                    <div class="container hero-container">
+                        <div class="hero-content" style="text-align: center;">
+                            <div class="hero-brand" style="justify-content: center;">
+                                <div class="hero-logo">
+                                    <i data-lucide="briefcase"></i>
+                                </div>
+                                <h1 class="hero-title">Trabalhe Conosco</h1>
+                            </div>
+                            <p class="hero-description" style="max-width: 64rem; margin: 0 auto;">
+                                Faça parte da nossa equipe e ajude a transformar ambientes com 
+                                <strong>higiene, praticidade e qualidade</strong>. Venha crescer conosco na Econorte!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Job Opportunities Section -->
+                <section class="careers-section">
+                    <div class="container">
+                        <div class="careers-grid">
+                            <!-- Available Jobs Card -->
+                            <div class="jobs-card">
+                                <div class="jobs-header">
+                                    <div class="jobs-icon">
+                                        <i data-lucide="briefcase"></i>
+                                    </div>
+                                    <h2 class="jobs-title">Vagas Disponíveis</h2>
+                                </div>
+                                
+                                <div class="jobs-list">
+                                    <div class="job-item">
+                                        <div class="job-icon admin-icon">
+                                            <i data-lucide="file-text"></i>
+                                        </div>
+                                        <div class="job-content">
+                                            <h3 class="job-title">Assistente Administrativo</h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="job-item">
+                                        <div class="job-icon financial-icon">
+                                            <i data-lucide="calculator"></i>
+                                        </div>
+                                        <div class="job-content">
+                                            <h3 class="job-title">Auxiliar Financeiro</h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="job-item">
+                                        <div class="job-icon sales-icon">
+                                            <i data-lucide="user-check"></i>
+                                        </div>
+                                        <div class="job-content">
+                                            <h3 class="job-title">Vendedor(a)</h3>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="job-item">
+                                        <div class="job-icon logistics-icon">
+                                            <i data-lucide="truck"></i>
+                                        </div>
+                                        <div class="job-content">
+                                            <h3 class="job-title">Auxiliar de Logística</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="jobs-footer">
+                                    <button onclick="openWhatsAppCareers()" class="btn-whatsapp-careers">
+                                        <i data-lucide="message-circle"></i>
+                                        <span>Falar sobre Vagas</span>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Application Form -->
+                            <div class="application-form-card">
+                                <div class="form-header">
+                                    <div class="form-icon">
+                                        <i data-lucide="user-plus"></i>
+                                    </div>
+                                    <h2 class="form-title">Envie seu Currículo</h2>
+                                    <p class="form-subtitle">
+                                        Preencha o formulário abaixo e anexe seu currículo. 
+                                        Entraremos em contato caso seu perfil seja compatível com nossas vagas.
+                                    </p>
+                                </div>
+                                
+                                <form id="careers-form" class="careers-form" novalidate>
+                                    <!-- Honeypot field -->
+                                    <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+                                    
+                                    <div class="form-group">
+                                        <label for="candidate-name" class="form-label">
+                                            Nome Completo *
+                                        </label>
+                                        <div class="input-group">
+                                            <i data-lucide="user" class="input-icon"></i>
+                                            <input
+                                                type="text"
+                                                id="candidate-name"
+                                                name="name"
+                                                class="form-input"
+                                                placeholder="Seu nome completo"
+                                                required
+                                                minlength="3"
+                                                maxlength="100"
+                                            >
+                                            <div class="field-validation"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="candidate-email" class="form-label">
+                                            E-mail *
+                                        </label>
+                                        <div class="input-group">
+                                            <i data-lucide="mail" class="input-icon"></i>
+                                            <input
+                                                type="email"
+                                                id="candidate-email"
+                                                name="email"
+                                                class="form-input"
+                                                placeholder="seu@email.com"
+                                                required
+                                            >
+                                            <div class="field-validation"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="candidate-phone" class="form-label">
+                                            Telefone *
+                                        </label>
+                                        <div class="input-group">
+                                            <i data-lucide="phone" class="input-icon"></i>
+                                            <input
+                                                type="tel"
+                                                id="candidate-phone"
+                                                name="phone"
+                                                class="form-input"
+                                                placeholder="(95) 99999-9999"
+                                                required
+                                            >
+                                            <div class="field-validation"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="position-interest" class="form-label">
+                                            Cargo de Interesse *
+                                        </label>
+                                        <div class="input-group">
+                                            <i data-lucide="briefcase" class="input-icon"></i>
+                                            <select
+                                                id="position-interest"
+                                                name="position"
+                                                class="form-select"
+                                                required
+                                            >
+                                                <option value="">Selecione o cargo</option>
+                                                <option value="assistente-administrativo">Assistente Administrativo</option>
+                                                <option value="auxiliar-financeiro">Auxiliar Financeiro</option>
+                                                <option value="vendedor">Vendedor(a)</option>
+                                                <option value="auxiliar-logistica">Auxiliar de Logística</option>
+                                                <option value="outros">Outros cargos</option>
+                                            </select>
+                                            <div class="field-validation"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="resume-file" class="form-label">
+                                            Currículo (PDF) *
+                                        </label>
+                                        <div class="file-upload-area">
+                                            <input
+                                                type="file"
+                                                id="resume-file"
+                                                name="resume"
+                                                class="file-input"
+                                                accept=".pdf"
+                                                required
+                                            >
+                                            <div class="file-upload-content">
+                                                <div class="file-icon">
+                                                    <i data-lucide="upload"></i>
+                                                </div>
+                                                <div class="file-text">
+                                                    <p class="file-main-text">Clique aqui ou arraste seu currículo</p>
+                                                    <p class="file-sub-text">Apenas arquivos PDF até 1MB</p>
+                                                </div>
+                                            </div>
+                                            <div class="file-selected" style="display: none;">
+                                                <i data-lucide="file-text"></i>
+                                                <span class="file-name"></span>
+                                                <button type="button" class="file-remove">
+                                                    <i data-lucide="x"></i>
+                                                </button>
+                                            </div>
+                                            <div class="field-validation"></div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    
+                                    <button type="submit" class="btn-submit-application" disabled>
+                                        <div class="btn-content">
+                                            <i data-lucide="send"></i>
+                                            <span>Enviar Candidatura</span>
+                                        </div>
+                                        <div class="btn-loading" style="display: none;">
+                                            <div class="loading-spinner"></div>
+                                            <span>Enviando...</span>
+                                        </div>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Benefits Section -->
+                <section class="benefits-section">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="section-title">Por que trabalhar na Econorte?</h2>
+                            <p class="section-description">
+                                Oferecemos um ambiente de trabalho colaborativo e oportunidades 
+                                de crescimento profissional em uma empresa consolidada no mercado.
+                            </p>
+                        </div>
+                        
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i data-lucide="trending-up"></i>
+                                </div>
+                                <h3 class="benefit-title">Crescimento Profissional</h3>
+                                <p class="benefit-description">
+                                    Oportunidades de desenvolvimento e crescimento na carreira 
+                                    com treinamentos e capacitações constantes.
+                                </p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i data-lucide="users"></i>
+                                </div>
+                                <h3 class="benefit-title">Ambiente Colaborativo</h3>
+                                <p class="benefit-description">
+                                    Equipe unida e ambiente de trabalho saudável, onde todos 
+                                    contribuem para o sucesso conjunto.
+                                </p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i data-lucide="shield-check"></i>
+                                </div>
+                                <h3 class="benefit-title">Estabilidade</h3>
+                                <p class="benefit-description">
+                                    Empresa consolidada no mercado com crescimento sustentável 
+                                    e segurança para os colaboradores.
+                                </p>
+                            </div>
+                            
+                            <div class="benefit-card">
+                                <div class="benefit-icon">
+                                    <i data-lucide="heart"></i>
+                                </div>
+                                <h3 class="benefit-title">Qualidade de Vida</h3>
+                                <p class="benefit-description">
+                                    Valorizamos o equilíbrio entre vida pessoal e profissional 
+                                    dos nossos colaboradores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
             <!-- Contact Page -->
             <div id="page-contact" class="page">
                 <!-- Hero Section -->
@@ -1052,146 +1345,12 @@
                     </div>
                 </section>
 
-                <!-- Contact Form and Info -->
+                <!-- Contact Info -->
                 <section style="padding: 5rem 0;">
                     <div class="container">
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 4rem;">
-                            
-                            <!-- Contact Form -->
-                            <div style="background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 2.5rem;">
-                                <h2 style="font-size: 1.875rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
-                                    Envie sua Mensagem
-                                </h2>
-                                
-                                <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
-                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                                        <div>
-                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                                Nome Completo *
-                                            </label>
-                                            <div style="position: relative;">
-                                                <i data-lucide="user" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    required
-                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
-                                                    placeholder="Seu nome completo"
-                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                                />
-                                            </div>
-                                        </div>
-                                        
-                                        <div>
-                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                                E-mail *
-                                            </label>
-                                            <div style="position: relative;">
-                                                <i data-lucide="mail" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    required
-                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
-                                                    placeholder="seu@email.com"
-                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                                        <div>
-                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                                Telefone *
-                                            </label>
-                                            <div style="position: relative;">
-                                                <i data-lucide="phone" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    required
-                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
-                                                    placeholder="(95) 9174-7792"
-                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                                />
-                                            </div>
-                                        </div>
-                                        
-                                        <div>
-                                            <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                                Empresa
-                                            </label>
-                                            <div style="position: relative;">
-                                                <i data-lucide="building" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
-                                                <input
-                                                    type="text"
-                                                    name="company"
-                                                    style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
-                                                    placeholder="Nome da sua empresa"
-                                                    onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                                    onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                                />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div>
-                                        <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                            Assunto *
-                                        </label>
-                                        <select
-                                            name="subject"
-                                            required
-                                            style="width: 100%; padding: 1rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; transition: all 0.3s ease;"
-                                            onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                            onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                        >
-                                            <option value="">Selecione um assunto</option>
-                                            <option value="orcamento">Solicitação de Orçamento</option>
-                                            <option value="produto">Informações sobre Produtos</option>
-                                            <option value="higiene">Soluções de Higiene</option>
-                                            <option value="organizacao">Organização de Ambientes</option>
-                                            <option value="suporte">Suporte Técnico</option>
-                                            <option value="outro">Outro</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div>
-                                        <label style="display: block; font-size: 0.875rem; font-weight: 600; color: var(--gray-700); margin-bottom: 0.75rem;">
-                                            Mensagem *
-                                        </label>
-                                        <div style="position: relative;">
-                                            <i data-lucide="message-square" style="position: absolute; left: 1rem; top: 1rem; width: 1.25rem; height: 1.25rem; color: var(--gray-400);"></i>
-                                            <textarea
-                                                name="message"
-                                                required
-                                                rows="6"
-                                                style="width: 100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--gray-300); border-radius: 0.75rem; resize: none; transition: all 0.3s ease;"
-                                                placeholder="Descreva sua necessidade ou dúvida sobre higiene e organização do seu ambiente..."
-                                                onfocus="this.style.outline='none'; this.style.borderColor='var(--econorte-blue-500)'; this.style.boxShadow='0 0 0 2px var(--econorte-blue-100)';"
-                                                onblur="this.style.borderColor='var(--gray-300)'; this.style.boxShadow='none';"
-                                            ></textarea>
-                                        </div>
-                                    </div>
-                                    
-                                    <button
-                                        type="submit"
-                                        class="btn-primary"
-                                        style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-size: 1.125rem; padding: 1rem;"
-                                    >
-                                        <i data-lucide="send" style="width: 1.5rem; height: 1.5rem;"></i>
-                                        <span>Enviar Mensagem</span>
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
 
                         <!-- Contact Information -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                             <div style="background: linear-gradient(135deg, var(--econorte-blue-50), var(--econorte-green-50)); border-radius: 1rem; padding: 2.5rem;">
                                 <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--gray-900); margin-bottom: 2rem;">
                                     Informações de Contato
@@ -1275,7 +1434,7 @@
                         </div>
 
                         <!-- Interactive Map -->
-                        <div style="margin-top: 4rem;">
+                        <div style="margin-top: 3rem;">
                             <div class="location-map">
                                 <iframe 
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7979.635451!2d-60.6754!3d2.8194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8d930cccccccccc%3A0x9999999999999999!2sAv.%20Centen%C3%A1rio%2C%20550%20-%20Cintur%C3%A3o%20Verde%2C%20Boa%20Vista%20-%20RR%2C%2069312-377%2C%20Brasil!5e0!3m2!1spt-BR!2sbr!4v1640995200000!5m2!1spt-BR!2sbr"
